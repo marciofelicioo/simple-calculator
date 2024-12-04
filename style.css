@@ -1,0 +1,108 @@
+/* Vídeo de fundo */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Coloca o vídeo atrás de tudo */
+    overflow: hidden;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    pointer-events: none; /* Impede interação no vídeo */
+}
+
+/* Fundo de fallback (caso o vídeo não carregue) */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    background-image: url('vlcsnap-2024-12-04-19h25m07s200.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+/* Calculadora */
+.calculator {
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo preto semitransparente */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    width: 300px;
+    color: #0f0; /* Texto verde */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.display {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.display input {
+    width: 100%;
+    height: 40px;
+    font-size: 18px;
+    padding: 5px;
+    border: 1px solid #0f0;
+    border-radius: 5px;
+    text-align: right;
+    background-color: #000;
+    color: #0f0;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 100%;
+}
+
+.btn {
+    padding: 20px;
+    font-size: 18px;
+    border: 1px solid #0f0;
+    border-radius: 5px;
+    background-color: #000;
+    color: #0f0;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s; /* Transições suaves */
+}
+
+.btn:hover {
+    background-color: #0f0;
+    color: #000;
+    transform: scale(1.1);
+}
+
+.operator {
+    background-color: #0f0;
+    color: #000;
+}
+
+.operator:hover {
+    background-color: #0c0;
+}
+
+.clear {
+    grid-column: span 4;
+    background-color: #f00;
+    color: #fff;
+}
+
+.clear:hover {
+    background-color: #c00;
+}
